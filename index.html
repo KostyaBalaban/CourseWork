@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Список справ</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <!-- <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyB6IZaVFo7fDDDbG3vQdJ66LymuanGJdn4",
+        authDomain: "todolist-d37e1.firebaseapp.com",
+        projectId: "todolist-d37e1",
+        storageBucket: "todolist-d37e1.appspot.com",
+        messagingSenderId: "615953921270",
+        appId: "1:615953921270:web:080d896f6b8f55afa3a8d7",
+        measurementId: "G-H6LG48CFXG",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script> -->
+    <h1 class="title">Справи, які потрібно виконати</h1>
+
+    <div class="all-tasks">
+      <h2 class="task-list-title">Мої списки</h2>
+      <ul class="task-list" data-lists></ul>
+
+      <form action="" data-new-list-form>
+        <input
+          type="text"
+          class="new list"
+          data-new-list-input
+          placeholder="ім'я нового списку"
+          aria-label="ім'я нового списку"
+        />
+        <button class="btn create" aria-label="створити новий список">+</button>
+      </form>
+    </div>
+
+    <div class="todo-list" data-list-display-container>
+      <div class="todo-header">
+        <h2 class="list-title" data-list-title>Тест</h2>
+        <p class="task-count" data-list-count>0 залишилося завдань</p>
+      </div>
+
+      <div class="todo-body">
+        <div class="tasks" data-tasks></div>
+
+        <div class="new-task-creator">
+          <form action="" data-new-task-form>
+            <input
+              type="text"
+              data-new-task-input
+              class="new task"
+              placeholder="ім'я нового завдання"
+              aria-label="ім'я нового завдання"
+            />
+            <button class="btn create" aria-label="створити нове завдання">
+              +
+            </button>
+          </form>
+        </div>
+
+        <div class="delete-stuff">
+          <button class="btn delete" data-clear-complete-tasks-button>
+            Очистити виконані завдання
+          </button>
+          <button class="btn delete" data-delete-list-button>
+            Видалити список
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
+  </body>
+</html>
